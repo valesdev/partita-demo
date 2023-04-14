@@ -44,6 +44,7 @@
       <p>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. A architecto, aut beatae dicta dignissimos distinctio dolores ducimus eaque eligendi minus, officia provident rem reprehenderit rerum sapiente sint, suscipit voluptates? Placeat!
       </p>
+      <PtHomeIndicator />
     </PtViewContent>
 
     <PtModal position="bottom" :visible="modalBottomVisible" @hide="modalBottomVisible = false">
@@ -56,6 +57,7 @@
           <p>Lorem ipsum quibusdam repudiandae repellat possimus repellendus, praesentium tempore molestias a, magni quos at ea asperiores. Consequuntur, eius! Magnam itaque debitis quia qui non!</p>
           <p>Lorem ipsum accusantium at molestiae eaque nam fuga voluptatibus? Architecto facere voluptas excepturi maxime fugiat, soluta necessitatibus at repellat quasi id praesentium expedita deserunt!</p>
           <p>Lorem ipsum minima vitae, ab officia quam quasi sapiente ipsum at voluptatem voluptate praesentium facilis? Inventore earum blanditiis eos aperiam est iusto ipsum debitis.</p>
+          <PtHomeIndicator />
         </PtViewContent>
       </PtSplitHeadbar>
     </PtModal>
@@ -70,6 +72,7 @@
           <p>Lorem ipsum quibusdam repudiandae repellat possimus repellendus, praesentium tempore molestias a, magni quos at ea asperiores. Consequuntur, eius! Magnam itaque debitis quia qui non!</p>
           <p>Lorem ipsum accusantium at molestiae eaque nam fuga voluptatibus? Architecto facere voluptas excepturi maxime fugiat, soluta necessitatibus at repellat quasi id praesentium expedita deserunt!</p>
           <p>Lorem ipsum minima vitae, ab officia quam quasi sapiente ipsum at voluptatem voluptate praesentium facilis? Inventore earum blanditiis eos aperiam est iusto ipsum debitis.</p>
+          <PtHomeIndicator />
         </PtViewContent>
       </PtSplitHeadbar>
     </PtModal>
@@ -87,6 +90,7 @@
           <p>Lorem ipsum qui aut vero, debitis quam rerum necessitatibus iste nihil voluptatibus explicabo consequatur laudantium. Possimus velit quod hic aliquid earum ipsa nam itaque?</p>
           <p>Lorem ipsum illo est porro tenetur similique error animi voluptatum consequatur fuga suscipit, modi ducimus eos natus reprehenderit alias, quia necessitatibus perspiciatis quod eum?</p>
           <p>Lorem ipsum id provident placeat magni autem illo, rem laudantium odit fuga similique, eius nihil natus voluptatem commodi excepturi a quo atque? Dignissimos, placeat!</p>
+          <PtHomeIndicator />
         </PtViewContent>
       </PtSplitFootbar>
     </PtModal>
@@ -104,6 +108,7 @@
           <p>Lorem ipsum qui aut vero, debitis quam rerum necessitatibus iste nihil voluptatibus explicabo consequatur laudantium. Possimus velit quod hic aliquid earum ipsa nam itaque?</p>
           <p>Lorem ipsum illo est porro tenetur similique error animi voluptatum consequatur fuga suscipit, modi ducimus eos natus reprehenderit alias, quia necessitatibus perspiciatis quod eum?</p>
           <p>Lorem ipsum id provident placeat magni autem illo, rem laudantium odit fuga similique, eius nihil natus voluptatem commodi excepturi a quo atque? Dignissimos, placeat!</p>
+          <PtHomeIndicator />
         </PtViewContent>
       </PtSplitHeadbar>
     </PtModal>
@@ -116,6 +121,7 @@
         <PtViewContent>
           <p>Lorem ipsum minus quo eveniet ullam esse voluptates, minima, alias error sunt nulla sequi aliquam. Aliquam dolore, ipsum natus explicabo praesentium temporibus quos earum.</p>
           <p>Lorem ipsum non mollitia quod labore blanditiis aliquam iure unde, commodi quasi omnis illo veritatis quas nam accusantium nesciunt eos voluptas culpa hic suscipit!</p>
+          <PtHomeIndicator />
         </PtViewContent>
       </PtSplitHeadbar>
     </PtModal>

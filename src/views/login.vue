@@ -23,6 +23,11 @@
       <p>
         <a href="javascript:void(0);" @click="$view.hide({ stack: 'auth' })">Close Auth view stack</a>
       </p>
+      <PtHomeIndicator />
     </PtViewContent>
   </PtView>
 </template>
+
+<script>
+export default {}
+</script>

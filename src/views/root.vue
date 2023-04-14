@@ -30,6 +30,7 @@
       <p>
         <a href="https://github.com/valesdev/partita" target="_blank">Github repo</a>
       </p>
+      <PtHomeIndicator />
     </PtViewContent>
   </PtView>
 </template>

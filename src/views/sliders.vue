@@ -41,6 +41,7 @@
         <input v-model.number="sliderIndex" type="number" step="1" min="0" max="6" style="width: 2em; text-align: center;">
         <a href="javascript:void(0);" @click="$refs.slider.slideNext()">Next</a>
       </p>
+      <PtHomeIndicator />
     </PtViewContent>
   </PtView>
 </template>

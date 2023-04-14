@@ -17,6 +17,11 @@
       <p>
         <a href="javascript:void(0);" @click="$view.push({ name: 'PageB' })">Push Page B</a>
       </p>
+      <PtHomeIndicator />
     </PtViewContent>
   </PtView>
 </template>
+
+<script>
+export default {}
+</script>
