@@ -1,4 +1,14 @@
 const { defineConfig } = require('@vue/cli-service')
+
 module.exports = defineConfig({
-  transpileDependencies: true
+  assetsDir: 'assets',
+
+  transpileDependencies: true,
+
+  productionSourceMap: false,
+
+  chainWebpack (config) {
+    config.resolve.alias
+      .set('partita', '../partita/src')
+  }
 })
