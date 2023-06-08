@@ -128,16 +128,12 @@
   </PtView>
 </template>
 
-<script>
-export default {
-  data () {
-    return {
-      modalBottomVisible: false,
-      modalTopVisible: false,
-      modalRightVisible: false,
-      modalLeftVisible: false,
-      modalCenterVisible: false
-    }
-  }
-}
+<script setup lang="ts">
+import { ref } from 'vue'
+
+const modalBottomVisible = ref(false)
+const modalTopVisible = ref(false)
+const modalRightVisible = ref(false)
+const modalLeftVisible = ref(false)
+const modalCenterVisible = ref(false)
 </script>

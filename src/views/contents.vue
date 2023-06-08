@@ -11,22 +11,14 @@
 
     <PtViewContent>
       <p>Page “Contents” goes here.</p>
-      <p>The prop <code>foo</code> is: <code>{{ foo }}</code></p>
-      <p>
-        <a href="javascript:void(0);" @click="$view.push({ name: 'PageA' })">Push Page A</a>
-      </p>
-      <p>
-        <a href="javascript:void(0);" @click="$view.push({ name: 'PageB' })">Push Page B</a>
-      </p>
+      <p>The prop <code>foo</code> is: <code>{{ props.foo }}</code></p>
       <PtHomeIndicator />
     </PtViewContent>
   </PtView>
 </template>
 
-<script>
-export default {
-  props: {
-    foo: { type: String, required: false, default: null }
-  }
-}
+<script setup lang="ts">
+const props = defineProps({
+  foo: { type: String, required: false, default: null }
+})
 </script>

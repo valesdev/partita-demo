@@ -1,21 +1,25 @@
 <template>
-  <PtViewStack stack="main" />
+  <PtViewStack name="main" />
 
-  <PtModal position="bottom" :visible="$view.currentVisibles.includes('auth')" @update:visible="$event ? $view.show({ stack: 'auth' }) : $view.hide({ stack: 'auth' })">
-    <PtViewStack stack="auth" />
+  <PtModal
+    position="bottom" 
+    :visible="$view.currentVisibles.includes('auth')"
+    @update:visible="$event ? $view.show('auth') : $view.hide('auth')"
+  >
+    <PtViewStack name="auth" />
   </PtModal>
+
+  <PtHolder />
 </template>
 
-<script>
+<script setup lang="ts">
+import { onMounted } from 'vue'
+import { ViewModule } from 'partita'
 
-export default {
-  name: 'App',
-  mounted () {
-    this.$view.register({ stack: 'auth' })
-    this.$view.push({ name: 'Root' })
-    this.$view.push({ name: 'Login', stack: 'auth' })
-  }
-}
+onMounted(() => {
+  ViewModule.push({ name: 'Root' })
+  ViewModule.push({ stack: 'auth', name: 'Login' })
+})
 </script>
 
 <style lang="scss">
@@ -23,5 +27,8 @@ export default {
   font-family: sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  font-size: 14px;
+  line-height: 1.4;
 }
 </style>

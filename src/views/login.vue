@@ -4,7 +4,7 @@
 
     <PtTitlebar>
       <template #left>
-        <a href="javascript:void(0);" @click="$view.hide({ stack: 'auth' })">Close</a>
+        <a href="javascript:void(0);" @click="$view.hide('auth')">Close</a>
       </template>
       <template #center>Login</template>
     </PtTitlebar>
@@ -21,13 +21,12 @@
         <a href="javascript:void(0);" @click="$view.push({ name: 'Register' })">Push Page Reigster</a>
       </p>
       <p>
-        <a href="javascript:void(0);" @click="$view.hide({ stack: 'auth' })">Close Auth view stack</a>
+        <a href="javascript:void(0);" @click="$view.hide('auth')">Close Auth view stack</a>
       </p>
       <PtHomeIndicator />
     </PtViewContent>
   </PtView>
 </template>
 
-<script>
-export default {}
+<script setup lang="ts">
 </script>
