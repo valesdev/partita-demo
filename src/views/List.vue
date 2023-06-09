@@ -49,7 +49,7 @@ const loader = (): Promise<void> => {
 const fetch = async (page: number = 1): Promise<void> => {
   await new Promise(resolve => setTimeout(resolve, 1e3))
 
-  const data = page < 3 ? ['aaa', 'bbb', 'ccc', 'ddd', 'eee', 'fff', 'ggg', 'hhh', 'iii', 'jjj'] : ['xxx', 'yyy', 'zzz']
+  const data = page < 4 ? ['aaa', 'bbb', 'ccc', 'ddd', 'eee', 'fff', 'ggg', 'hhh', 'iii', 'jjj'] : ['xxx', 'yyy', 'zzz']
 
   curPage.value = page
   if (page === 1) {
@@ -61,7 +61,7 @@ const fetch = async (page: number = 1): Promise<void> => {
 }
 
 const refresh = (): Promise<void> => {
-  return loader()
+  return fetch()
 }
 
 const loadmore = (): Promise<void> => {
