@@ -47,12 +47,12 @@
       <PtHomeIndicator />
     </PtViewContent>
 
-    <PtModal position="bottom" :visible="modalBottomVisible" @hide="modalBottomVisible = false">
-      <PtSplitHeadbar>
+    <PtModal position="bottom" v-model:visible="modalBottomVisible">
+      <PtSplitHeadbar style="max-height: 150px;">
         <template #bar>
           <p>The sheet modal goes here. <a href="javascript:void(0);" @click="modalBottomVisible = false">Close</a></p>
         </template>
-        <PtViewContent style="max-height: 150px;">
+        <PtViewContent>
           <p>Lorem ipsum natus iusto, deleniti blanditiis, itaque quas perspiciatis nam vel nulla qui dolore nostrum voluptas aperiam architecto pariatur animi quis beatae enim at.</p>
           <p>Lorem ipsum quibusdam repudiandae repellat possimus repellendus, praesentium tempore molestias a, magni quos at ea asperiores. Consequuntur, eius! Magnam itaque debitis quia qui non!</p>
           <p>Lorem ipsum accusantium at molestiae eaque nam fuga voluptatibus? Architecto facere voluptas excepturi maxime fugiat, soluta necessitatibus at repellat quasi id praesentium expedita deserunt!</p>
@@ -62,12 +62,12 @@
       </PtSplitHeadbar>
     </PtModal>
 
-    <PtModal position="top" :visible="modalTopVisible" @hide="modalTopVisible = false">
-      <PtSplitHeadbar>
+    <PtModal position="top" v-model:visible="modalTopVisible">
+      <PtSplitHeadbar style="max-height: 150px;">
         <template #bar>
           <p>The sheet modal goes here. <a href="javascript:void(0);" @click="modalTopVisible = false">Close</a></p>
         </template>
-        <PtViewContent style="max-height: 150px;">
+        <PtViewContent>
           <p>Lorem ipsum natus iusto, deleniti blanditiis, itaque quas perspiciatis nam vel nulla qui dolore nostrum voluptas aperiam architecto pariatur animi quis beatae enim at.</p>
           <p>Lorem ipsum quibusdam repudiandae repellat possimus repellendus, praesentium tempore molestias a, magni quos at ea asperiores. Consequuntur, eius! Magnam itaque debitis quia qui non!</p>
           <p>Lorem ipsum accusantium at molestiae eaque nam fuga voluptatibus? Architecto facere voluptas excepturi maxime fugiat, soluta necessitatibus at repellat quasi id praesentium expedita deserunt!</p>
@@ -77,7 +77,7 @@
       </PtSplitHeadbar>
     </PtModal>
 
-    <PtModal position="right" :visible="modalRightVisible" @hide="modalRightVisible = false">
+    <PtModal position="right" v-model:visible="modalRightVisible">
       <PtSplitFootbar style="width: 200px;">
         <template #bar>
           <p>The panel goes here. <a href="javascript:void(0);" @click="modalRightVisible = false">Close</a></p>
@@ -95,12 +95,12 @@
       </PtSplitFootbar>
     </PtModal>
 
-    <PtModal position="left" :visible="modalLeftVisible" @hide="modalLeftVisible = false">
+    <PtModal position="left" v-model:visible="modalLeftVisible">
       <PtSplitHeadbar style="width: 200px;">
         <template #bar>
           <p>The panel goes here. <a href="javascript:void(0);" @click="modalLeftVisible = false">Close</a></p>
         </template>
-        <PtViewContent style="width: 200px;">
+        <PtViewContent>
           <p>Lorem ipsum minus quo eveniet ullam esse voluptates, minima, alias error sunt nulla sequi aliquam. Aliquam dolore, ipsum natus explicabo praesentium temporibus quos earum.</p>
           <p>Lorem ipsum non mollitia quod labore blanditiis aliquam iure unde, commodi quasi omnis illo veritatis quas nam accusantium nesciunt eos voluptas culpa hic suscipit!</p>
           <p>Lorem ipsum placeat, eligendi veritatis. Repellat ratione, neque natus, minima blanditiis facilis eius mollitia, nemo nisi eum sint facere suscipit dolores. Cupiditate, quibusdam impedit!</p>
@@ -113,7 +113,7 @@
       </PtSplitHeadbar>
     </PtModal>
 
-    <PtModal position="center" :visible="modalCenterVisible" @hide="modalCenterVisible = false">
+    <PtModal position="center" v-model:visible="modalCenterVisible">
       <PtSplitHeadbar style="width: 300px; max-height: 200px;">
         <template #bar>
           <p>The dialog goes here. <a href="javascript:void(0);" @click="modalCenterVisible = false">Close</a></p>
@@ -128,16 +128,12 @@
   </PtView>
 </template>
 
-<script>
-export default {
-  data () {
-    return {
-      modalBottomVisible: false,
-      modalTopVisible: false,
-      modalRightVisible: false,
-      modalLeftVisible: false,
-      modalCenterVisible: false
-    }
-  }
-}
+<script setup lang="ts">
+import { ref } from 'vue'
+
+const modalBottomVisible = ref(false)
+const modalTopVisible = ref(false)
+const modalRightVisible = ref(false)
+const modalLeftVisible = ref(false)
+const modalCenterVisible = ref(false)
 </script>

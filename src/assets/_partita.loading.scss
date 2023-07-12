@@ -1,0 +1,40 @@
+.PtLoadingHolder {
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &.v-enter-active,
+    &.v-leave-active {
+      transition-duration: 200ms;
+
+      .PtLoadingHolder__item-fg {
+        transition-property: opacity, transform;
+        transition-duration: 200ms;
+      }
+    }
+
+    &.v-enter-from {
+      .PtLoadingHolder__item-fg {
+        opacity: 0;
+        transform: scale(1.1);
+      }
+    }
+
+    &.v-leave-from,
+    &.v-enter-to {
+      .PtLoadingHolder__item-fg {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    &.v-leave-to {
+      .PtLoadingHolder__item-fg {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+    }
+  }
+}

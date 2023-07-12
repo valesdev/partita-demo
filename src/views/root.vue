@@ -12,10 +12,13 @@
         <a href="javascript:void(0);" @click="$view.push({ name: 'Contents', params: { foo } })">Push Page Contents</a><br>(with prop <code>foo</code>=<input v-model="foo" type="text" />)
       </p>
       <p>
-        <a href="javascript:void(0);" @click="$view.push({ name: 'Modals' })">Push Page Modals</a>
+        <a href="javascript:void(0);" @click="$view.push({ name: 'Interactions' })">Push Page Interactions</a>
       </p>
       <p>
-        <a href="javascript:void(0);" @click="$view.push({ name: 'Sliders' })">Push Page Sliders</a>
+        <a href="javascript:void(0);" @click="$view.push({ name: 'List' })">Push Page List</a>
+      </p>
+      <p>
+        <a href="javascript:void(0);" @click="$view.push({ name: 'Modals' })">Push Page Modals</a>
       </p>
       <p>
         <a href="javascript:void(0);" @click="$view.push({ name: 'PageA' })">Push Page A</a>
@@ -24,7 +27,7 @@
         <a href="javascript:void(0);" @click="$view.push({ name: 'PageB' })">Push Page B</a>
       </p>
       <p>
-        <a href="javascript:void(0);" @click="$view.show({ stack: 'auth' })">Show Auth view stack</a>
+        <a href="javascript:void(0);" @click="$view.show('auth')">Show Auth view stack</a>
       </p>
       <hr />
       <p>
@@ -35,12 +38,8 @@
   </PtView>
 </template>
 
-<script>
-export default {
-  data () {
-    return {
-      foo: 'bar'
-    }
-  }
-}
+<script setup lang="ts">
+import { ref } from 'vue'
+
+const foo = ref('bar')
 </script>

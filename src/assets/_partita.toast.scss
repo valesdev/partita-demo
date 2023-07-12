@@ -1,0 +1,66 @@
+.PtToastHolder {
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &.v-enter-active,
+    &.v-leave-active {
+      transition-duration: 200ms;
+
+      .PtToastHolder__item-bg {
+        transition-property: opacity;
+        transition-duration: 200ms;
+      }
+
+      .PtToastHolder__item-fg {
+        transition-property: opacity, transform;
+        transition-duration: 200ms;
+      }
+    }
+
+    &.v-enter-from {
+      .PtToastHolder__item-bg {
+        opacity: 0;
+      }
+
+      .PtToastHolder__item-fg {
+        opacity: 0;
+        transform: scale(1.1);
+      }
+    }
+
+    &.v-leave-from,
+    &.v-enter-to {
+      .PtToastHolder__item-bg {
+        opacity: 1;
+      }
+
+      .PtToastHolder__item-fg {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    &.v-leave-to {
+      .PtToastHolder__item-bg {
+        opacity: 0;
+      }
+
+      .PtToastHolder__item-fg {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+    }
+  }
+
+  &__item-fg {
+    padding: 1em;
+    background-color: rgba(0, 0, 0, 0.6);
+    overflow: hidden;
+
+    color: #ffffff;
+    white-space: pre-line;
+  }
+}

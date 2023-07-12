@@ -1,16 +1,16 @@
 <template>
-  <PtView class="ViewPageB">
+  <PtView class="ViewPageA">
     <PtStatusbar />
 
     <PtTitlebar>
       <template #left>
         <PtTitlebarBackButton />
       </template>
-      <template #center>Page B</template>
+      <template #center>Page A</template>
     </PtTitlebar>
 
     <PtViewContent>
-      <p>Page B goes here.</p>
+      <p>Page A goes here.</p>
       <p>
         <a href="javascript:void(0);" @click="$view.push({ name: 'PageA' })">Push Page A</a>
       </p>
@@ -22,6 +22,5 @@
   </PtView>
 </template>
 
-<script>
-export default {}
+<script setup lang="ts">
 </script>
