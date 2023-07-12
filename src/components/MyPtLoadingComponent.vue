@@ -1,15 +1,25 @@
 <template>
-  <div class="MyPtSpinner">
-    <div class="MyPtSpinner__image" />
+  <div class="MyPtLoading">
+    <div class="MyPtLoading__image" />
 
-    <div class="MyPtSpinner__content" v-if="'default' in $slots && $slots.default">
+    <div class="MyPtLoading__content" v-if="'default' in $slots">
       <slot />
     </div>
   </div>
 </template>
 
+<script setup lang="ts">
+</script>
+
 <style lang="scss">
-.MyPtSpinner {
+.MyPtLoading {
+  padding: 1em;
+  background-color: rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+
+  color: #ffffff;
+  white-space: pre-line;
+
   &__image {
     display: block;
     margin-left: auto;
@@ -21,7 +31,7 @@
   }
 
   &__content {
-    padding-top: 1em;
+    margin-top: 0.5em;
   }
 }
 </style>

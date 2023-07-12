@@ -2,7 +2,7 @@
   <PtViewStack name="main" />
 
   <PtModal
-    position="bottom" 
+    position="bottom"
     :visible="$view.currentVisibles.includes('auth')"
     @update:visible="$event ? $view.show('auth') : $view.hide('auth')"
   >
@@ -17,6 +17,7 @@ import { onMounted } from 'vue'
 import { ViewModule } from 'partita'
 
 onMounted(() => {
+  ViewModule.show('main')
   ViewModule.push({ name: 'Root' })
   ViewModule.push({ stack: 'auth', name: 'Login' })
 })

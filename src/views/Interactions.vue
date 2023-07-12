@@ -21,10 +21,13 @@
         <a href="javascript:void(0);" @click="dialogConfirm()">$dialog.confirm()</a>
       </p>
       <p>
-        <a href="javascript:void(0);" @click="dialogConfirmWithCustom()">$dialog.confirm() with custom component</a>
+        <a href="javascript:void(0);" @click="dialogConfirmWithExtra()">$dialog.confirm() with extra component</a>
       </p>
       <p>
         <a href="javascript:void(0);" @click="toast()">$toast.show()</a>
+      </p>
+      <p>
+        <a href="javascript:void(0);" @click="toastWithCustom()">$toast.show() with custom component</a>
       </p>
       <p>
         <a href="javascript:void(0);" @click="toast3times()">$toast.show() 3 times</a>
@@ -35,6 +38,12 @@
       <p>
         <a href="javascript:void(0);" @click="loadingShowWithContent()">$loading.show() with content</a>
       </p>
+      <p>
+        <a href="javascript:void(0);" @click="loadingShowWithCustom()">$loading.show() with custom component</a>
+      </p>
+      <p>
+        <a href="javascript:void(0);" @click="loadingShow3times()">$loading.show() 3 times</a>
+      </p>
       <PtHomeIndicator />
     </PtViewContent>
   </PtView>
@@ -44,9 +53,10 @@
 import { DialogModule, ToastModule, LoadingModule } from 'partita'
 
 import MyDialogInputComponent from '@/components/MyDialogInputComponent.vue'
-import { markRaw } from 'vue';
+import MyToastComponent from '@/components/MyToastComponent.vue'
+import MyPtLoadingAltComponent from '@/components/MyPtLoadingAltComponent.vue'
 
-const dialogAlert = () => { 
+const dialogAlert = () => {
   DialogModule.alert('The content goes here.', 'The Title Goes Here')
     .then(value => {
       window.console.info('alert()', 'value:', value)
@@ -54,11 +64,11 @@ const dialogAlert = () => {
     })
 }
 
-const dialogAlertWithLongContent = () => { 
+const dialogAlertWithLongContent = () => {
   DialogModule.alert('Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio, quo omnis! Cum, sapiente. Obcaecati sequi consequuntur voluptas minus unde eligendi aliquid. Consequatur ex sequi facere consectetur eum beatae minima obcaecati!\n\nLorem ipsum dolor sit amet consectetur, adipisicing elit. Autem, quia tempore aliquid nostrum tempora nesciunt id cum dolor perferendis culpa accusantium possimus ut beatae, eligendi quidem cupiditate ipsam voluptatem repudiandae.\n\nLorem ipsum dolor sit amet consectetur adipisicing elit. Nisi tempora repudiandae voluptate alias perferendis consectetur neque, beatae inventore quibusdam officiis, sapiente reiciendis facere temporibus eum placeat eos. Labore, ratione doloremque.\n\nLorem, ipsum dolor sit amet consectetur adipisicing elit. Magni ut aspernatur aliquid quas impedit veritatis quos perferendis soluta molestias. Doloribus libero aspernatur dolorum sed sit laboriosam est, deleniti adipisci voluptates?\n\nLorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt maiores perspiciatis amet, fugiat porro tenetur placeat quia sint inventore minima aspernatur accusantium illo ad dolorum architecto, debitis aut exercitationem vitae!', 'The Title Goes Here')
 }
 
-const dialogConfirm = () => { 
+const dialogConfirm = () => {
   DialogModule.confirm('The content goes here.', 'The Title Goes Here')
     .then(value => {
       window.console.info('confirm()', 'value:', value)
@@ -66,13 +76,13 @@ const dialogConfirm = () => {
     })
 }
 
-const dialogConfirmWithCustom = () => { 
+const dialogConfirmWithExtra = () => {
   const formState = {
     foo: ''
   }
 
   DialogModule.confirm('The content goes here.', 'The Title Goes Here', {
-    component: {
+    extraComponent: {
       is: MyDialogInputComponent,
       props: {
         formState
@@ -90,11 +100,17 @@ const dialogConfirmWithCustom = () => {
     })
 }
 
-const toast = () => { 
+const toast = () => {
   ToastModule.show('The content goes here.')
 }
 
-const toast3times = () => { 
+const toastWithCustom = () => {
+  ToastModule.show('The content goes here.', {
+    component: MyToastComponent
+  })
+}
+
+const toast3times = () => {
   ToastModule.show('1st toast goes here.')
 
   window.setTimeout(() => {
@@ -115,6 +131,24 @@ const loadingShow = () => {
 }
 
 const loadingShowWithContent = () => {
+  LoadingModule.show('Fetching…')
+
+  window.setTimeout(() => {
+    LoadingModule.hide('Fetching…')
+  }, 2000)
+}
+
+const loadingShowWithCustom = () => {
+  LoadingModule.show('Fetching…', {
+    component: MyPtLoadingAltComponent
+  })
+
+  window.setTimeout(() => {
+    LoadingModule.hide('Fetching…')
+  }, 2000)
+}
+
+const loadingShow3times = () => {
   LoadingModule.show('Fetching 1st')
 
   window.setTimeout(() => {

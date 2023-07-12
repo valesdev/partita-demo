@@ -7,14 +7,14 @@ import Partita from 'partita'
 
 import '@/assets/partita.scss'
 
-import MyPtSpinnerComponent from './MyPtSpinnerComponent.vue'
+import MyPtLoadingComponent from './MyPtLoadingComponent.vue'
 import MyPtPtrComponent from './MyPtPtrComponent.vue'
 
 const componentsPlugin: Plugin = {
   install (app) {
     app.use(Partita, {
-      spinner: {
-        component: MyPtSpinnerComponent
+      loading: {
+        component: MyPtLoadingComponent
       },
       ptr: {
         component: MyPtPtrComponent,
